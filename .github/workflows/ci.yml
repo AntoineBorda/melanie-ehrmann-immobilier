@@ -1,0 +1,67 @@
+name: Symfony CI
+
+on:
+  push:
+    branches:
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+env:
+  APP_ENV: prod
+
+jobs:
+  # Security checker
+  security-checker:
+    runs-on: ubuntu-latest
+    container:
+      image: jakzal/phpqa:php8.3
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies and set permissions
+        run: |
+          composer install --no-cache
+          chmod +x ./bin/console
+      - name: Security Checker
+        run: local-php-security-checker composer.lock
+
+  # Code standards
+  code-standards:
+    runs-on: ubuntu-latest
+    container:
+      image: jakzal/phpqa:php8.3
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies and set permissions
+        run: |
+          composer install --no-cache
+          chmod +x ./bin/console
+      - name: PHP Coding Standards
+        run: |
+          php-cs-fixer fix ./src --dry-run --rules=@Symfony --verbose
+          phpstan analyse ./src -l3
+          phpdd ./src
+          phpcpd --min-tokens=500 ./src --exclude './src/Controller/Admin/' --exclude './src/Entity'
+
+  # Lint
+  lint:
+    runs-on: ubuntu-latest
+    container:
+      image: jakzal/phpqa:php8.3
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies and set permissions
+        run: |
+          composer install --no-cache
+          chmod +x ./bin/console
+      - name: Lint Twig and Yaml
+        run: |
+          ./bin/console lint:twig templates --env=prod
+          ./bin/console lint:yaml config --parse-tags
+          ./bin/console lint:container --env=prod
+      - name: Doctrine Schema Validate
+        run: ./bin/console doctrine:schema:validate --skip-sync -vvv --no-interaction

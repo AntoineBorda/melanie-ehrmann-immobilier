@@ -1,0 +1,21 @@
+services:
+  #PHP
+  php:
+    image: php:8.3.0-fpm
+    volumes:
+      - php_data:/var/www/html
+    container_name: melanieehrmann_php
+
+  database:
+    image: postgres:${POSTGRES_VERSION:-16}-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+    volumes:
+      - db-data:/var/lib/postgresql/data:rw
+    container_name: melanieehrmann_database
+
+volumes:
+  php_data:
+  db-data:
