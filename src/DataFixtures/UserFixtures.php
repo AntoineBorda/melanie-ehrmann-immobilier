@@ -14,13 +14,12 @@ class UserFixtures extends Fixture
             'email' => 'admin@app.fr',
             'password' => 'admin',
             'roles' => ['ROLE_ADMIN'],
-        ]
+        ],
     ];
 
     public function __construct(
         private readonly PasswordHasherFactoryInterface $passwordHasherFactory
-    )
-    {
+    ) {
     }
 
     public function load(ObjectManager $manager): void
@@ -37,4 +36,3 @@ class UserFixtures extends Fixture
         $manager->flush();
     }
 }
-
