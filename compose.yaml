@@ -6,14 +6,15 @@ services:
       - php_data:/var/www/html
     container_name: melanieehrmann_php
 
+  #Database
   database:
-    image: postgres:${POSTGRES_VERSION:-16}-alpine
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-app}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ChangeMe}
-      POSTGRES_USER: ${POSTGRES_USER:-app}
+    image: mariadb:11.2.3
     volumes:
-      - db-data:/var/lib/postgresql/data:rw
+      - db-data:/var/lib/mysq
+    env_file:
+      - .env.local
+    ports:
+      - 3307:3306
     container_name: melanieehrmann_database
 
 volumes:
