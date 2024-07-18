@@ -38,7 +38,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         pattern: '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
         message: 'Le mot de passe doit contenir une majuscule, une minuscule, un numérique et un caratère spécial'
     )]
-    private ?string $password = null;
+    private string $password;
 
     public function getId(): ?int
     {
@@ -69,8 +69,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @return list<string>
-     * @see UserInterface
      *
+     * @see UserInterface
      */
     public function getRoles(): array
     {
