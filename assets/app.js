@@ -7,3 +7,6 @@ import './bootstrap.js';
  */
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+
+// enable the interactive UI components from Flowbite with Turbo
+import 'flowbite/dist/flowbite.turbo.js';
