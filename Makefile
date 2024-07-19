@@ -308,6 +308,7 @@ db-reset: ## Reset database.
 		$(MAKE) sf-dc; \
 		$(MAKE) sf-mm; \
 		$(MAKE) sf-dmm; \
+		$(MAKE) sf-dfl; \
 		fi
 .PHONY: db-reset
 
