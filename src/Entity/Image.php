@@ -31,6 +31,9 @@ class Image
     #[ORM\Column(length: 255)]
     private ?string $mimeType = null;
 
+    #[ORM\ManyToOne(inversedBy: 'image')]
+    private ?Offer $offer = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -81,5 +84,17 @@ class Image
     public function setMimeType(?string $mimeType): void
     {
         $this->mimeType = $mimeType;
+    }
+
+    public function getOffer(): ?Offer
+    {
+        return $this->offer;
+    }
+
+    public function setOffer(?Offer $offer): static
+    {
+        $this->offer = $offer;
+
+        return $this;
     }
 }
