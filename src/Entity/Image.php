@@ -38,7 +38,7 @@ class Image
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable|null $createdAt): static
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
 
