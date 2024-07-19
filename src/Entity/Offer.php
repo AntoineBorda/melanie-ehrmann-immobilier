@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\OfferRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: OfferRepository::class)]
 class Offer
@@ -13,55 +14,155 @@ class Offer
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column]
+    #[Assert\NotNull]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
     #[ORM\Column(length: 4)]
+    #[Assert\NotNull]
+    #[Assert\Choice(
+        choices: ['rent', 'sale'],
+        message: 'Le type doit être "rent" ou "sale"'
+    )]
     private ?string $type = null;
 
     #[ORM\Column]
+    #[Assert\NotNull]
     private ?bool $isClosed = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotNull]
+    #[Assert\Length(
+        min: 1,
+        max: 255,
+        minMessage: 'Le titre doit contenir au moins {{ limit }} caractères',
+        maxMessage: 'Le titre ne doit pas dépasser {{ limit }} caractères'
+    )]
+    #[Assert\Regex(
+        pattern: '/^[a-z0-9 ]{1,255}$/i',
+        message: 'Le titre ne doit contenir que des lettres, des chiffres et des espaces'
+    )]
     private ?string $title = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $adress = null;
+    #[Assert\Regex(pattern: '/^[a-z0-9 ]{1,255}$/i')]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: 'L\'adresse ne doit pas dépasser {{ limit }} caractères'
+    )]
+    private ?string $address = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le code postal doit être compris entre {{ min }} et {{ max }}',
+        min: 1000,
+        max: 99999
+    )]
     private ?int $zipcode = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[Assert\Regex(
+        pattern: '/^[a-z ]{1,50}$/i',
+        message: 'La ville ne doit contenir que des lettres et des espaces'
+    )]
+    #[Assert\Length(
+        max: 50,
+        maxMessage: 'La ville ne doit pas dépasser {{ limit }} caractères'
+    )]
     private ?string $city = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[Assert\Regex(
+        pattern: '/^[a-z ]{1,50}$/i',
+        message: 'Le quartier ne doit contenir que des lettres et des espaces'
+    )]
+    #[Assert\Length(
+        max: 50,
+        maxMessage: 'Le quartier ne doit pas dépasser {{ limit }} caractères'
+    )]
     private ?string $district = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le loyer doit être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $rentPrice = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Les charges doivent être comprises entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $rentCharge = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le dépôt de garantie doit être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $rentDeposit = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le prix de vente TTC doit être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999999
+    )]
     private ?int $salePriceInclAgencyFee = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le prix de vente HT doit être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999999
+    )]
     private ?int $salePriceExclAgencyFee = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Les charges de copropriété doivent être comprisent entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $saleCharge = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'La taxe foncière doit être comprise entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $propertyTax = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Les honoraires à la charge de l\'acquéreur doivent être compris entre {{ min }} et {{ max }} %',
+        min: 0,
+        max: 100
+    )]
     private ?float $buyerFee = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Les frais d\'agence doivent être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $agencyFee = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Les frais d\'état des lieux doivent être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $inventoryFee = null;
 
     #[ORM\Column(nullable: true)]
@@ -92,41 +193,117 @@ class Offer
     private ?bool $hasElevator = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'La surface habitable doit être comprise entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $livingSpace = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'La surface carrez doit être comprise entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99999
+    )]
     private ?int $officialSpace = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'La surface du terrain doit être comprise entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 999999
+    )]
     private ?int $terrainSpace = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le nombre d\'étages doit être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99
+    )]
     private ?int $floor = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le nombre de pièces doit être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99
+    )]
     private ?int $room = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le nombre de salles de bain doit être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99
+    )]
     private ?int $bathroom = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'Le nombre de chambres doit être compris entre {{ min }} et {{ max }}',
+        min: 0,
+        max: 99
+    )]
     private ?int $bedroom = null;
 
     #[ORM\Column(length: 20, nullable: true)]
+    #[Assert\Choice(
+        choices: ['américaine', 'semi-ouverte', 'fermée'],
+        message: 'Le type de cuisine doit être "américaine", "semi-ouverte" ou "fermée"'
+    )]
     private ?string $kitchenType = null;
 
     #[ORM\Column(length: 20, nullable: true)]
+    #[Assert\Choice(
+        choices: ['individuel', 'collectif'],
+        message: 'Le type de chauffage doit être "individuel" ou "collectif"'
+    )]
     private ?string $heatingType = null;
 
     #[ORM\Column(length: 20, nullable: true)]
+    #[Assert\Choice(
+        choices: ['électrique', 'gaz', 'fioul', 'bois', 'solaire', 'pompe à chaleur', 'autre'],
+        message: 'Le mode de chauffage doit être "électrique", "gaz", "fioul", "bois", "solaire", "pompe à chaleur" ou "autre"'
+    )]
     private ?string $heatingMode = null;
 
     #[ORM\Column(nullable: true)]
+    #[Assert\Range(
+        notInRangeMessage: 'L\'année de construction doit être comprise entre {{ min }} et {{ max }}',
+        min: 1000,
+        max: 9999
+    )]
     private ?int $constructionYear = null;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTimeImmutable $createdAt): static
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 
     public function getType(): ?string
@@ -165,14 +342,14 @@ class Offer
         return $this;
     }
 
-    public function getAdress(): ?string
+    public function getAddress(): ?string
     {
-        return $this->adress;
+        return $this->address;
     }
 
-    public function setAdress(?string $adress): static
+    public function setAddress(?string $address): static
     {
-        $this->adress = $adress;
+        $this->address = $address;
 
         return $this;
     }
