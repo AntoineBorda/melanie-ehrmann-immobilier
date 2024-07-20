@@ -5,3 +5,8 @@ import './styles/app.css';
 
 // Flowbite
 import 'flowbite/dist/flowbite.turbo.js';
+
+// Custom JS
+import './js/darkmode.js';
+import './js/darkmodeEvent.js';
+
