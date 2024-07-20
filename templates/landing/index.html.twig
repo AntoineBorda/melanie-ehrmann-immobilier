@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    Accueil
+{% endblock %}
+{% block body %}
+
+    {{ include ('landing/components/_header.html.twig') }}
+
+    {{ include ('landing/components/_agency.html.twig') }}
+
+    {{ include ('landing/components/_galery.html.twig') }}
+
+    {{ include ('landing/components/_stats.html.twig') }}
+
+    {{ include ('landing/components/_advice.html.twig') }}
+
+    {{ include ('landing/components/_expertise.html.twig') }}
+
+    {{ include ('landing/components/_contact.html.twig') }}
+
+{% endblock %}

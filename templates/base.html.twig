@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>
-        {% block title %}Welcome!{% endblock %}
+        {% block title %}Melanie Ehrmann | Gestion Locative et Valorisation de Patrimoine à Strasbourg et environs |{% endblock %}
     </title>
 
     {% block stylesheets %}
@@ -18,7 +18,13 @@
 </head>
 
 <body>
-{% block body %}{% endblock %}
+{{ include('partials/_navbar.html.twig') }}
+
+{% block body %}
+{% endblock %}
+
+{{ include('partials/_footer.html.twig') }}
+
 </body>
 
 </html>
