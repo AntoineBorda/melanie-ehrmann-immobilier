@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Weave';
+    src: url('Weave-Medium.eot');
+    src: local('Weave Medium'), local('Weave-Medium'),
+        url('Weave-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Weave-Medium.woff2') format('woff2'),
+        url('Weave-Medium.woff') format('woff'),
+        url('Weave-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weave';
+    src: url('Weave-Regular.eot');
+    src: local('Weave Regular'), local('Weave-Regular'),
+        url('Weave-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Weave-Regular.woff2') format('woff2'),
+        url('Weave-Regular.woff') format('woff'),
+        url('Weave-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weave';
+    src: url('Weave-ExtraBold.eot');
+    src: local('Weave ExtraBold'), local('Weave-ExtraBold'),
+        url('Weave-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Weave-ExtraBold.woff2') format('woff2'),
+        url('Weave-ExtraBold.woff') format('woff'),
+        url('Weave-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weave';
+    src: url('Weave-Bold.eot');
+    src: local('Weave Bold'), local('Weave-Bold'),
+        url('Weave-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Weave-Bold.woff2') format('woff2'),
+        url('Weave-Bold.woff') format('woff'),
+        url('Weave-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weave';
+    src: url('Weave-Black.eot');
+    src: local('Weave Black'), local('Weave-Black'),
+        url('Weave-Black.eot?#iefix') format('embedded-opentype'),
+        url('Weave-Black.woff2') format('woff2'),
+        url('Weave-Black.woff') format('woff'),
+        url('Weave-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Weave';
+    src: url('Weave-SemiBold.eot');
+    src: local('Weave SemiBold'), local('Weave-SemiBold'),
+        url('Weave-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Weave-SemiBold.woff2') format('woff2'),
+        url('Weave-SemiBold.woff') format('woff'),
+        url('Weave-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
