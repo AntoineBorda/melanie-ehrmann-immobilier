@@ -3,7 +3,8 @@
          class="group dark:bg-transparent bg-transparent border-gray-200 py-2.5 fixed w-full z-30 top-0 start-0 data-[sticky=true]:bg-white data-[sticky=true]:border-b dark:data-[sticky=true]:bg-gray-800 dark:data-[sticky=true]:border-gray-700">
         <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4">
             <a href="#" class="flex items-center">
-                <img src="{{ asset('build/images/logo-ehrmann-full.png') }}" class="mr-3 h-8" alt="Flowbite Logo"/>
+                <img src="{{ asset('build/images/logo/logo-ehrmann-full.png') }}" class="mr-3 h-8"
+                     alt="Melanie Ehrmann Immobilier Strasbourg Logo"/>
             </a>
             <div class="flex items-center lg:order-2">
                 <button id="themeToggle" data-tooltip-target="tooltip-toggle" type="button"
@@ -18,6 +19,7 @@
                               fill-rule="evenodd" clip-rule="evenodd"></path>
                     </svg>
                 </button>
+                {# Darkmode button #}
                 <button id="theme-toggle" type="button"
                         class="mx-2 rounded-lg text-sm text-gray-500 p-2.5 hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700">
                     <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"
@@ -30,15 +32,19 @@
                               fill-rule="evenodd" clip-rule="evenodd"></path>
                     </svg>
                 </button>
+                {# Contact button #}
                 <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"
                         aria-controls="drawer-navigation"
-                        class="mr-2 inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-white bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 focus:outline-none focus:ring-4 dark:bg-primary-600 lg:py-2.5 lg:px-5 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                    <svg class="mr-2 w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                         fill="currentColor" viewBox="0 0 16 20">
-                        <path d="M16 14V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v15a3 3 0 0 0 3 3h12a1 1 0 0 0 0-2h-1v-2a2 2 0 0 0 2-2ZM4 2h2v12H4V2Zm8 16H3a1 1 0 0 1 0-2h9v2Z"/>
+                        class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-emerald-700 group hover:border-emerald-800 dark:border-emerald-600 dark:hover:border-emerald-700">
+                    <svg class="h-6 w-6 text-emerald-700 group-hover:text-emerald-800 dark:text-emerald-600 dark:group-hover:text-emerald-700"
+                         aria-hidden="true"
+                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                         viewBox="0 0 24 24">
+                        <path d="M2.038 5.61A2.01 2.01 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-.12-.01-.238-.03-.352l-.866.65-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"/>
+                        <path d="M20.677 4.117A1.996 1.996 0 0 0 20 4H4c-.225 0-.44.037-.642.105l.758.607L12 10.742 19.9 4.7l.777-.583Z"/>
                     </svg>
-                    View pages
                 </button>
+
                 <button id="mobile-menu-button" data-collapse-toggle="mobile-menu-2" type="button"
                         class="inline-flex items-center p-2 ml-1 text-sm text-gray-300 group-data-[sticky=true]:text-gray-500 group-data-[sticky=true]:dark:text-gray-400 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-300 dark:hover:bg-gray-700 focus:ring-gray-600"
                         aria-controls="mobile-menu-2" aria-expanded="false">
@@ -61,28 +67,27 @@
                 <ul class="flex flex-col rounded-lg font-medium lg:space-x-8 lg:flex-row">
                     <li>
                         <a href="#"
-                           class="lg:dark:text-gray-900 block py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                           aria-current="page">Home</a>
+                           class="lg:dark:text-gray-900 block py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">
+                            Faire Gérer
+                        </a>
                     </li>
                     <li>
                         <a href="#"
-                           class="lg:dark:text-gray-900 block py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">Company</a>
+                           class="lg:dark:text-gray-900 py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">
+                            Faire Valoriser
+                        </a>
                     </li>
                     <li>
                         <a href="#"
-                           class="lg:dark:text-gray-900 py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                           class="lg:dark:text-gray-900 block py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">
+                            L'Agence
+                        </a>
                     </li>
                     <li>
                         <a href="#"
-                           class="lg:dark:text-gray-900 block py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                           class="lg:dark:text-gray-900 block py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">Team</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                           class="lg:dark:text-gray-900 block py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 hover:bg-gray-100 lg:hover:bg-transparent lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                           class="lg:dark:text-gray-900 block py-2 pr-4 pl-3 text-gray-900 lg:text-gray-900 lg:group-data-[sticky=true]:text-gray-900 dark:lg:group-data-[sticky=true]:text-white hover:!text-primary-500 lg:group-data-[sticky=true]:hover:!text-primary-700 dark:lg:group-data-[sticky=true]:hover:!text-primary-500 border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-gray-900 lg:dark:hover:bg-transparent dark:border-gray-700">
+                            Annonces
+                        </a>
                     </li>
                 </ul>
             </div>
