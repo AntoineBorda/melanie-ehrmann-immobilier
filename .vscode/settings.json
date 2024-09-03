@@ -1,3 +1,4 @@
 {
-    "twiggy.framework": "ignore"
+  "twiggy.framework": "ignore",
+  "makefile.configureOnOpen": false
 }
