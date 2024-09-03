@@ -1,72 +1,23 @@
 <section class="py-4 bg-default-50 dark:bg-default-900 lg:py-8">
-    <div class="mx-auto max-w-screen-xl px-4">
-        <div class="grid gap-6 lg:grid-cols-3">
-            <div class="space-y-6">
-                <figure class="rounded bg-default-50 p-6 dark:bg-default-800">
-                    <blockquote class="text-sm text-default-500 dark:text-default-400">
-                        <h3 class="text-lg font-semibold text-default-900 dark:text-default-50">Solid foundation for any
-                            project</h3>
-                        <p class="my-4">"This is a very complex and beautiful set of elements. Under the hood it
-                            comes with the best
-                            things from 2 different worlds: Figma and Tailwind.”</p>
-                    </blockquote>
-                    <figcaption class="flex items-center space-x-3">
-                        <img class="h-9 w-9 rounded-full"
-                             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                             alt="profile picture">
-                        <div class="font-medium space-y-0.5 dark:text-default-50">
-                            <div>Bonnie Green</div>
-                            <div class="text-sm text-default-500 dark:text-default-400">CTO at Open AI</div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="space-y-6">
-                <figure class="rounded bg-default-50 p-6 dark:bg-default-800">
-                    <blockquote class="text-sm text-default-500 dark:text-default-400">
-                        <h3 class="text-lg font-semibold text-default-900 dark:text-default-50">Mindblowing workflow and
-                            variants</h3>
-                        <p class="my-4">"Flowbite provides a robust set of design tokens and components based on the
-                            popular
-                            Tailwind CSS framework.</p>
-                        <p class="my-4">From the most used UI components like forms and navigation bars to the whole
-                            app screens
-                            designed both for desktop and mobile, this UI kit provides a solid foundation for any
-                            project.”</p>
-                    </blockquote>
-                    <figcaption class="flex items-center space-x-3">
-                        <img class="h-9 w-9 rounded-full"
-                             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png"
-                             alt="profile picture">
-                        <div class="font-medium space-y-0.5 dark:text-default-50">
-                            <div>Helene Engels</div>
-                            <div class="text-sm text-default-500 dark:text-default-400">CFO at Microsoft</div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="space-y-6">
-                <figure class="rounded bg-default-50 p-6 dark:bg-default-800">
-                    <blockquote class="text-sm text-default-500 dark:text-default-400">
-                        <h3 class="text-lg font-semibold text-default-900 dark:text-default-50">Mindblowing workflow and
-                            variants</h3>
-                        <p class="my-4">"Flowbite is just awesome. It contains tons of predesigned components and
-                            pages starting
-                            from login screen to complex dashboard. Perfect choice for your next SaaS
-                            application.”</p>
-                    </blockquote>
-                    <figcaption class="flex items-center space-x-3">
-                        <img class="h-9 w-9 rounded-full"
-                             src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/neil-sims.png"
-                             alt="profile picture">
-                        <div class="font-medium space-y-0.5 dark:text-default-50">
-                            <div>Neil Sims</div>
-                            <div class="text-sm text-default-500 dark:text-default-400">Software architect at Amazon
-                            </div>
-                        </div>
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
-    </div>
+	<div class="max-w-screen-xl px-4 mx-auto">
+		<div class="grid gap-6 lg:grid-cols-3">
+			{{ include('components/_google-advice.html.twig', {
+                title: 'Dévouée, à l’écoute, très professionnelle',
+                content: 'Mon expérience avec l’agence immobilière gérée par Mme Ehrmann: Dévouée, à l’écoute, très professionnelle, elle a su répondre à toutes mes attentes en matière de gestion locative. Sa connaissance du marché, sa patience et son sens du service client sont remarquables. Je recommande vivement à tous ceux qui recherchent un vrai service de qualité dans le domaine immobilier.',
+				author: 'Arthur Koroglu',
+            }) }}
+
+			{{ include('components/_google-advice.html.twig', {
+                title: 'Je recommande sans réserve',
+                content: 'Je recommande sans réserve car Madame Ehrmann est à l\'écoute des besoins des locataires et très réactive, le service rendu est de grande qualité.',
+				author: 'Lea Grandpierre',
+            }) }}
+
+			{{ include('components/_google-advice.html.twig', {
+                title: 'Une garantie de professionnalisme, de disponibilité, et de rigueur',
+                content: 'Être accompagnée par Mélanie, c’est une garantie de professionnalisme, de disponibilité, et de rigueur. Tout ce que j’apprécie pour la tranquillité de mon bien. Je recommande vivement.',
+				author: 'Karen T',
+            }) }}
+		</div>
+	</div>
 </section>
