@@ -1,0 +1,65 @@
+<section class="py-4 border-t border-b border-default-300 bg-default-200 dark:bg-default-800 dark:border-default-700 lg:py-8">
+	<div
+		class="max-w-screen-xl px-4 mx-auto">
+
+		{# Informations #}
+		<div class="grid grid-cols-1 gap-6 text-center sm:grid-cols-2 sm:gap-16 lg:grid-cols-3">
+			<div>
+				<div class="inline-flex items-center justify-center w-16 h-16 mx-auto rounded-lg text-default-500 bg-default-100 dark:bg-default-800 dark:text-default-50">
+					<svg aria-hidden="true" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor">
+						<path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/>
+					</svg>
+				</div>
+				<div class="mt-4">
+					<h3 class="text-xl font-bold text-default-900 dark:text-default-50">
+						Informations de l'agence:
+					</h3>
+					<p class="mt-1 text-base font-normal text-default-500 dark:text-default-400">
+						Mélanie EHRMANN IMMOBILIER SAS
+					</p>
+				</div>
+			</div>
+
+			<div>
+				<div class="inline-flex items-center justify-center w-16 h-16 mx-auto rounded-lg text-default-500 bg-default-100 dark:bg-default-800 dark:text-default-50">
+					<svg aria-hidden="true" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor">
+						<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+					</svg>
+				</div>
+				<div class="mt-4">
+					<h3 class="text-xl font-bold text-default-900 dark:text-default-50">
+						Addresse:
+					</h3>
+					<p class="mt-1 text-base font-normal text-default-500 dark:text-default-400">
+						1a Boulevard Gambetta<br>67000 Strasbourg
+					</p>
+				</div>
+			</div>
+
+			<div class="hidden lg:block">
+				<div class="inline-flex items-center justify-center w-16 h-16 mx-auto rounded-lg text-default-500 bg-default-100 dark:bg-default-800 dark:text-default-50">
+					<svg aria-hidden="true" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor">
+						<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+					</svg>
+				</div>
+				<div class="mt-4">
+					<h3 class="text-xl font-bold text-default-900 dark:text-default-50">
+						Contactez-moi:
+					</h3>
+					<p class="mt-1 text-base font-normal text-default-500 dark:text-default-400">
+						Envoyez-moi un email pour toutes questions ou informations. Vous pouvez également me contacter par téléphone.
+					</p>
+					<div class="block mt-1 text-base font-semibold text-default-900 dark:text-default-50">
+						contact@melanie-ehrmann.immo<br>06 63 72 37 42
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{# Form #}
+		<div class="max-w-3xl mx-auto mt-8 lg:mt-24">
+			{{ include('components/_contact-form.html.twig') }}
+		</div>
+
+	</div>
+</section>
