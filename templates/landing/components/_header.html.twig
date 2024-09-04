@@ -1,69 +1,82 @@
-<section class="relative overflow-hidden bg-default-50">
-    <div class="absolute inset-0">
-        <img class="h-full w-full object-cover opacity-40 lg:opacity-100"
-             src="{{ asset('build/images/room/lobby.jpg') }}" alt="">
-    </div>
+<section
+	class="relative overflow-hidden bg-default-50">
 
-    <div class="relative mx-auto max-w-screen-xl px-4 py-0 pt-24 text-default-50 z-1 sm:py-16 sm:pt-24 lg:py-14 lg:pt-32">
+	{# Backgroud image #}
+	<div class="absolute inset-0">
+		<img class="object-cover w-full h-full opacity-40 lg:opacity-100" src="{{ asset('build/images/room/lobby.jpg') }}" alt="">
+	</div>
 
-        <div class="mb-6 max-w-4xl lg:mb-0">
-            {# Title #}
-            <h1 class="mb-4 w-full text-3xl font-extrabold leading-none tracking-tight font-title text-primary-700 md:text-4xl lg:w-2/3 lg:text-5xl">
-                Mélanie Ehrmann Immobilier à Strasbourg
-            </h1>
-            {# Description #}
-            <p class="mb-6 text-default-800 md:text-lg lg:mb-8 lg:text-xl">
-                Spécialiste de la gestion locative, je prends en charge tous les aspects de la
-                gestion de vos biens au quotidien pour vous libérer du temps et vous apporter toute sérénité et vous
-                accompagne dans la réalisation de tous vos projets immobiliers.
-            </p>
-            {# CTA #}
-            <div class="mt-14">
-                {{ include('components/_cta-contact.html.twig', {
+	{# Portrait image lg #}
+	<div class="absolute bottom-0 right-0 hidden lg:block ">
+		<img class="opacity-100 w-96" src="{{ asset('build/images/portrait/main.png') }}" alt="">
+	</div>
+
+	<div class="relative max-w-screen-xl px-4 py-0 pt-24 mx-auto text-default-50 z-1 sm:py-16 sm:pt-24 lg:py-14 lg:pt-32">
+
+		<div
+			class="flex flex-col max-w-4xl mb-6 lg:mb-0">
+
+			{# Portrait image #}
+			<div class="flex justify-start lg:hidden">
+				<img class="w-40 mb-4 opacity-100" src="{{ asset('build/images/portrait/main.png') }}" alt="">
+			</div>
+			{# Title #}
+			<h1 class="w-full mb-4 text-3xl font-extrabold leading-none tracking-tight font-title text-primary-700 md:text-4xl lg:w-2/3 lg:text-5xl">
+				Mélanie Ehrmann Immobilier à Strasbourg
+			</h1>
+			{# Description #}
+			<p class="mb-6 text-default-800 md:text-lg lg:mb-8 lg:text-xl">
+				Spécialiste de la gestion locative, je prends en charge tous les aspects de la gestion de vos biens au quotidien pour vous libérer du temps et vous apporter toute sérénité et vous accompagne dans la réalisation de tous vos projets immobiliers.
+			</p>
+			{# CTA #}
+			<div class="mt-6">
+				{{ include('components/_cta-contact.html.twig', {
                     text: 'Contactez-moi'
                 }) }}
-            </div>
-        </div>
+			</div>
 
-    </div>
+		</div>
+
+	</div>
 
 </section>
 
-<section class="bg-default-100 dark:bg-default-900 py-4 lg:py-8">
-    <div class="mx-auto max-w-screen-xl px-4">
+<section class="py-4 bg-default-100 dark:bg-default-900 lg:py-8">
+	<div
+		class="max-w-screen-xl px-4 mx-auto">
 
-        {# Cards #}
-        <div class="grid grid-cols-2 lg:grid-cols-4">
+		{# Cards #}
+		<div class="grid grid-cols-2 lg:grid-cols-4">
 
-            {{ include('components/_core-card.html.twig', {
+			{{ include('components/_core-card.html.twig', {
                 image: 'bi:house-gear',
                 title: 'Gestion Locative',
                 description: 'Gestion administrative, financière, technique, juridique et pratique de vos biens.',
                 url: '#'
             }) }}
 
-            {{ include('components/_core-card.html.twig', {
+			{{ include('components/_core-card.html.twig', {
                 image: 'bi:paint-bucket',
                 title: 'Home Staging',
                 description: 'Valorisation de votre bien pour une vente ou une location rapide.',
                 url: '#'
             }) }}
 
-            {{ include('components/_core-card.html.twig', {
+			{{ include('components/_core-card.html.twig', {
                 image: 'bi:house-heart',
                 title: 'Co-Living',
                 description: 'Vivre ensemble dans un espace partagé, convivial et solidaire.',
                 url: '#'
             }) }}
 
-            {{ include('components/_core-card.html.twig', {
+			{{ include('components/_core-card.html.twig', {
                 image: 'bi:house-down',
                 title: 'Location',
                 description: 'Mise en location de vos bien dans les meilleures conditions.',
                 url: '#'
             }) }}
 
-        </div>
+		</div>
 
-    </div>
+	</div>
 </section>
