@@ -12,10 +12,6 @@
 				<p class="mb-4">
 					Juriste de formation, spécialiste de la gestion locative, je prends en charge tous les aspects de la gestion de vos biens au quotidien pour vous libérer du temps et vous apporter toute sérénité et vous accompagne dans la réalisation de tous vos projets immobiliers.
 				</p>
-				{# CTA #}
-				{{ include('components/_cta-contact.html.twig', {
-                    text: 'Contactez-moi'
-                }) }}
 			</div>
 
 			<div class="mt-4 text-default-900 sm:text-lg lg:mt-0 dark:text-default-50">
@@ -32,6 +28,13 @@
 					Je propose un service de gestion locative sur mesure, adapté à vos besoins.
 				</p>
 			</div>
+		</div>
+
+		{# CTA #}
+		<div class="mt-6">
+			{{ include('components/_cta-rectangle.html.twig', {
+                    text: 'Contactez-moi'
+                }) }}
 		</div>
 
 	</div>

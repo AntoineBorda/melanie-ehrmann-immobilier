@@ -22,9 +22,9 @@
 				</button>
 
 				{# Contact button #}
-				<button class="flex items-center justify-center w-12 h-12 border-2 rounded-full border-primary-600 group hover:border-primary-700 dark:border-primary-700 dark:hover:border-primary-800">
-					<twig:ux:icon name="bi:envelope-fill" class="w-5 h-5 text-primary-600 group-hover:text-primary-700 dark:text-primary-700 dark:group-hover:text-primary-800"/>
-				</button>
+				{{ include ('components/_cta-round.html.twig', {
+					icon: 'bi:envelope',
+				}) }}
 
 				{# Mobile button #}
 				<button id="mobile-menu-button" data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-default-300 group-data-[sticky=true]:text-default-500 group-data-[sticky=true]:dark:text-default-400 rounded-lg lg:hidden hover:bg-default-100 focus:outline-none dark:text-default-300 dark:hover:bg-default-700 focus:ring-default-600" aria-controls="mobile-menu" aria-expanded="false">
