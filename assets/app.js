@@ -11,5 +11,6 @@ import 'flowbite/dist/flowbite.turbo.js';
 
 // Custom JS
 import './js/darkmode.js';
+import './js/mobile-button.js';
 
 
