@@ -35,7 +35,7 @@ NPM_WATCH = $(NPM) run watch
 
 #---PHPQA---#
 PHPQA = jakzal/phpqa:php8.3
-PHPQA_RUN = $(DOCKER_RUN) --init --rm -v $(PWD):/project -w /project $(PHPQA)
+PHPQA_RUN = $(DOCKER_RUN) --init --rm -v ${PWD}:/project -w /project $(PHPQA)
 #------------#
 
 #---PHPUNIT-#
@@ -308,6 +308,7 @@ db-reset: ## Reset database.
 		$(MAKE) sf-dc; \
 		$(MAKE) sf-mm; \
 		$(MAKE) sf-dmm; \
+		$(MAKE) sf-dfl; \
 		fi
 .PHONY: db-reset
 

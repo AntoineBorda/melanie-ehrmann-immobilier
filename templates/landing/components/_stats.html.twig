@@ -1,0 +1,24 @@
+<section class="py-8 bg-default-100 dark:bg-default-900 lg:py-16">
+	<div class="max-w-screen-xl px-4 mx-auto">
+
+		<div class="grid max-w-screen-md gap-8 mx-auto text-default-900 dark:text-default-50 sm:grid-cols-3">
+			<div class="flex flex-col items-center justify-center">
+				{% set startDate = date('2006-01-01') %}
+				{% set currentDate = date('now') %}
+				{% set yearsDifference = currentDate|date('Y') - startDate|date('Y') %}
+				<dt class="mb-2 text-3xl font-extrabold sm:text-4xl">{{ yearsDifference }}
+					ANS</dt>
+				<dd class="text-default-500 dark:text-default-400">d'expérience</dd>
+			</div>
+			<div class="flex flex-col items-center justify-center">
+				<dt class="mb-2 text-3xl font-extrabold sm:text-4xl">150</dt>
+				<dd class="text-default-500 dark:text-default-400">clients</dd>
+			</div>
+			<div class="flex flex-col items-center justify-center">
+				<dt class="mb-2 text-3xl font-extrabold sm:text-4xl">200</dt>
+				<dd class="text-default-500 dark:text-default-400">biens gérés</dd>
+			</div>
+		</div>
+
+	</div>
+</section>

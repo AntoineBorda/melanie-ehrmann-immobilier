@@ -18,7 +18,7 @@ class UserFixtures extends Fixture
     ];
 
     public function __construct(
-        private readonly PasswordHasherFactoryInterface $passwordHasherFactory
+        private readonly PasswordHasherFactoryInterface $passwordHasherFactory,
     ) {
     }
 

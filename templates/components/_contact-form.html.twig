@@ -1,0 +1,13 @@
+{{ form_start(form, {attr: {novalidate: 'novalidate', class: 'grid max-w-screen-md grid-cols-1 mx-auto gap-x-8 gap-y-6 sm:grid-cols-2'}}) }}
+
+{{ form_row(form.firstname) }}
+{{ form_row(form.lastname) }}
+{{ form_row(form.email) }}
+{{ form_row(form.phone) }}
+<div class='sm:col-span-2'>
+	{{ form_row(form.message) }}
+</div>
+
+<button type="submit" class="px-5 py-3 text-sm font-medium text-center rounded-lg text-default-50 bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 focus:outline-none focus:ring-4 dark:bg-primary-600 sm:w-fit dark:hover:bg-primary-700 dark:focus:ring-primary-800">Envoyer</button>
+
+{{ form_end(form) }}

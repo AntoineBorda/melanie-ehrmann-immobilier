@@ -4,7 +4,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "php": ">=8.2",
+    "php": ">=8.3",
     "ext-ctype": "*",
     "ext-iconv": "*",
     "doctrine/dbal": "^3",
@@ -37,13 +37,16 @@
     "symfony/string": "7.1.*",
     "symfony/translation": "7.1.*",
     "symfony/twig-bundle": "7.1.*",
+    "symfony/ux-icons": "^2.18",
     "symfony/ux-turbo": "^2.18",
+    "symfony/ux-twig-component": "*",
     "symfony/validator": "7.1.*",
     "symfony/web-link": "7.1.*",
     "symfony/webpack-encore-bundle": "^2.1",
     "symfony/yaml": "7.1.*",
     "twig/extra-bundle": "^2.12|^3.0",
-    "twig/twig": "^2.12|^3.0"
+    "twig/twig": "^2.12|^3.0",
+    "vich/uploader-bundle": "^2.4"
   },
   "config": {
     "allow-plugins": {

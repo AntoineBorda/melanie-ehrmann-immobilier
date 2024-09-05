@@ -1,0 +1,18 @@
+<div class="space-y-6">
+	<figure class="p-6 rounded bg-default-50 dark:bg-default-800">
+		<blockquote class="text-sm text-default-500 dark:text-default-400">
+			<h3 class="text-lg font-semibold text-default-900 dark:text-default-50">"{{ title }}"</h3>
+			<p class="my-4">"{{ content }}"
+			</p>
+		</blockquote>
+		<figcaption class="flex items-center space-x-3">
+			<twig:ux:icon name="bi:google" class="rounded-full h-9 w-9 text-primary-900 dark:text-primary-400"/>
+			<div class="font-medium space-y-0.5 dark:text-default-50">
+				<div>{{ author }}</div>
+				<div class="text-sm text-default-500 dark:text-default-400">Avis de Google</div>
+				{# Google stars #}
+				{% include "components/_google-stars.html.twig" %}
+			</div>
+		</figcaption>
+	</figure>
+</div>
