@@ -24,7 +24,7 @@ class ContactType extends AbstractType
                     new Assert\NotNull(),
                 ],
                 'attr' => [
-                    'placeholder' => 'Mickael',
+                    'placeholder' => 'Michael',
                     'class' => 'block w-full p-3 text-sm border rounded-lg text-default-900 border-default-300 bg-default-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-default-700 dark:border-default-600 dark:placeholder-default-400 dark:text-default-50 dark:focus:ring-primary-500 dark:focus:border-primary-500',
                 ],
             ])
