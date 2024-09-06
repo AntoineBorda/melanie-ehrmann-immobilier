@@ -1,6 +1,6 @@
 <a class="relative inline-block text-2xl font-black font-title text-primary-700 group focus:outline-none" href="#">
-	<span class="absolute inset-0 border border-secondary-400 rounded-xl group-active:border-secondary-400"></span>
-	<span class="block px-12 py-4 transition-transform border bg-secondary-400 border-secondary-400 rounded-xl active:border-secondary-300 active:bg-secondary-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
+	<span class="absolute inset-0 border rounded-full border-secondary-400 group-active:border-secondary-400"></span>
+	<span class="block {{ size | default('px-12 py-2') }} transition-transform border rounded-full bg-secondary-400 border-secondary-400 active:border-secondary-300 active:bg-secondary-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
 		{{ text }}
 	</span>
 </a>
