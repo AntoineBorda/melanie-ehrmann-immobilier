@@ -6,33 +6,26 @@
 		<img class="hidden object-cover w-full h-full opacity-40 lg:opacity-100 lg:block" src="{{ asset('build/images/room/lobby.jpg') }}" alt="">
 	</div>
 
-	<div class="relative max-w-screen-xl px-4 py-0 pt-24 mx-auto text-default-50 z-1 sm:py-16 sm:pt-24 lg:py-14 lg:pt-32">
+	<div class="relative max-w-screen-xl px-4 py-0 pt-32 mx-auto text-default-50 z-1">
 
 		<div
 			class="flex flex-col max-w-4xl mb-0 lg:mb-0">
 
 			{# Title #}
-			<h1 class="w-full mb-4 text-4xl font-extrabold leading-none tracking-tight font-title text-default-50 md:text-4xl lg:w-3/4 lg:text-6xl">
+			<h1 class="w-full mb-4 text-4xl font-extrabold leading-none tracking-tight font-title text-default-50 lg:text-primary-700 lg:w-3/4 lg:text-6xl">
 				Mélanie Ehrmann Immobilier
 			</h1>
 
 			{# Description #}
-			<p class="w-full mb-4 text-3xl font-title xl:w-full text-default-50 md:text-lg lg:mb-8 lg:text-xl">
+			<p class="w-full mb-4 text-3xl font-title xl:w-full text-default-50 lg:text-default-900 lg:mb-8 lg:text-4xl">
 				<span class="font-black text-secondary-400">G</span>estion locative.<br>
 				<span class="font-black text-secondary-400">V</span>alorisation de biens.<br>
 				<span class="font-black text-secondary-400">L</span>ocation à Strasbourg.
 			</p>
 
-			{# Portrait image #}
-			<div class="relative left-28">
+			{# Portrait image mobile #}
+			<div class="relative left-28 lg:hidden">
 				<img class="opacity-100 w-60" src="{{ asset('build/images/portrait/main.png') }}" alt="">
-			</div>
-
-			{# CTA contact #}
-			<div class="hidden mt-6 lg:block">
-				{{ include('components/_cta-rectangle.html.twig', {
-                    text: 'Contactez-moi'
-                }) }}
 			</div>
 
 		</div>
@@ -47,6 +40,9 @@
 	</div>
 
 </section>
+
+{# CTA floating contact #}
+{{ include('components/_cta-floating-contact.html.twig') }}
 
 <section class="py-4 bg-default-100 dark:bg-default-900 lg:py-8">
 	<div
@@ -89,7 +85,7 @@
 </section>
 
 {# CTA contact #}
-<div class="fixed bottom-0 left-0 right-0 z-50 block p-2 bg-primary-600 sm:relative sm:bg-transparent sm:p-0 lg:hidden">
+<div class="fixed bottom-0 left-0 right-0 z-50 block p-2 bg-primary-600 lg:hidden">
 	<div class="mx-auto text-center">
 		{{ include('components/_cta-rectangle.html.twig', {
             text: 'Contactez-moi',

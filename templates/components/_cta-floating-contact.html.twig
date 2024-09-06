@@ -1,0 +1,14 @@
+<div
+	class="fixed hidden bottom-16 lg:block right-16">
+	{# Portrait image lg #}
+	<div class="relative left-8 top-4">
+		<img class="opacity-100 w-72" src="{{ asset('build/images/portrait/main.png') }}" alt="">
+	</div>
+	{# CTA contact #}
+	<div>
+		{{ include('components/_cta-rectangle.html.twig', {
+        text: 'Contactez-moi',
+		size: 'px-24 py-3'
+    }) }}
+	</div>
+</div>
