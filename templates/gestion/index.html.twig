@@ -7,6 +7,11 @@
 
 {% block body %}
 
+	{{ include ('gestion/components/_header.html.twig') }}
+
 	{{ include ('gestion/components/_content.html.twig') }}
+
+	{# CTA floating contact #}
+	{{ include('components/_cta-floating-contact.html.twig') }}
 
 {% endblock %}
