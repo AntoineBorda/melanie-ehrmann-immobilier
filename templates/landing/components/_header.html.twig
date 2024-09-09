@@ -2,41 +2,47 @@
 	class="relative overflow-hidden bg-default-50">
 
 	{# Backgroud image #}
-	<div class="absolute inset-0">
-		<img class="object-cover w-full h-full opacity-40 lg:opacity-100" src="{{ asset('build/images/room/lobby.jpg') }}" alt="">
+	<div class="absolute inset-0 bg-primary-700">
+		<img class="hidden object-cover w-full h-full opacity-40 lg:opacity-100 lg:block" src="{{ asset('build/images/room/lobby.jpg') }}" alt="">
 	</div>
 
-	{# Portrait image lg #}
-	<div class="absolute bottom-0 hidden right-14 lg:block ">
-		<img class="opacity-100 w-80" src="{{ asset('build/images/portrait/main.png') }}" alt="">
-	</div>
-
-	<div class="relative max-w-screen-xl px-4 py-0 pt-24 mx-auto text-default-50 z-1 sm:py-16 sm:pt-24 lg:py-14 lg:pt-32">
+	<div class="relative max-w-screen-xl px-4 py-0 pt-32 mx-auto lg:pb-52 text-default-50 z-1">
 
 		<div
-			class="flex flex-col max-w-4xl mb-6 lg:mb-0">
+			class="flex flex-col max-w-4xl mb-0 lg:mb-0">
 
-			{# Portrait image #}
-			<div class="flex justify-start lg:hidden">
-				<img class="w-40 mb-4 opacity-100" src="{{ asset('build/images/portrait/main.png') }}" alt="">
-			</div>
 			{# Title #}
-			<h1 class="w-full mb-4 text-3xl font-extrabold leading-none tracking-tight font-title text-primary-700 md:text-4xl lg:w-2/3 lg:text-5xl">
-				Mélanie Ehrmann Immobilier à Strasbourg
+			<h1 class="w-full mb-4 text-4xl font-extrabold leading-none tracking-tight font-title text-default-50 lg:text-primary-700 lg:w-3/4 lg:text-6xl">
+				Mélanie Ehrmann Immobilier
 			</h1>
+
 			{# Description #}
-			<p class="mb-6 text-default-800 md:text-lg lg:mb-8 lg:text-xl">
-				Spécialiste de la gestion locative, je prends en charge tous les aspects de la gestion de vos biens au quotidien pour vous libérer du temps et vous apporter toute sérénité et vous accompagne dans la réalisation de tous vos projets immobiliers.
-			</p>
-			{# CTA #}
-			<div class="mt-6">
-				{{ include('components/_cta-contact.html.twig', {
-                    text: 'Contactez-moi'
-                }) }}
+			<div class="flex flex-col lg:mt-4 lg:space-y-4">
+				<p class="w-full text-3xl font-title xl:w-full text-default-50 lg:text-default-900 lg:text-4xl">
+					<span class="font-black text-secondary-400">G</span>estion locative.
+				</p>
+				<p class="w-full text-3xl font-title xl:w-full text-default-50 lg:text-default-900 lg:text-4xl">
+					<span class="font-black text-secondary-400">V</span>alorisation de biens.
+				</p>
+				<p class="w-full text-3xl font-title xl:w-full text-default-50 lg:text-default-900 lg:text-4xl">
+					<span class="font-black text-secondary-400">L</span>ocation à Strasbourg.
+				</p>
+			</div>
+
+			{# Portrait image mobile #}
+			<div class="relative left-28 lg:hidden">
+				<img class="opacity-100 w-60" src="{{ asset('build/images/portrait/main.png') }}" alt="">
 			</div>
 
 		</div>
 
+	</div>
+
+	{# Shape #}
+	<div class="absolute inset-x-0 bottom-0">
+		<div class="text-default-100 dark:text-default-900 shape shape-bottom shape-fluid-x">
+			{% include('partials/shapes/curves/right.html.twig') %}
+		</div>
 	</div>
 
 </section>
@@ -80,3 +86,13 @@
 
 	</div>
 </section>
+
+{# CTA contact #}
+<div class="fixed bottom-0 left-0 right-0 z-50 block p-2 bg-primary-600 lg:hidden">
+	<div class="mx-auto text-center">
+		{{ include('components/_cta-rectangle.html.twig', {
+            text: 'Contactez-moi',
+			size: 'px-12 py-2'
+        }) }}
+	</div>
+</div>
